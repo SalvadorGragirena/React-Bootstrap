@@ -1,49 +1,37 @@
-import React from 'react';
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from './CartWidget';
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
-const linkStyle = {
-  margin: "1rem",
-  textDecoration: "none",
-  color: 'grey'
-};
-
-const dropStyle = {
-  textDecoration: "none",
-  fontSize: 16,
-  color: 'black',
-}
-
-const Menu = () => {
+function Menu() {
   return (
-        <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand to="/">React-Bootstrap</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Link to="/" style={linkStyle}>Inicio</Link>
-              <Link to="/Nosotros" style={linkStyle}>Nosotros</Link>
-              <NavDropdown title="Dropdown" style={linkStyle} id="basic-nav-dropdown">
-                <NavDropdown.Item>
-                  <Link style={dropStyle} to="/"> Action </Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <Link style={dropStyle} to="/"> Action 2</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <Link style={dropStyle} to="/"> Action 3</Link>
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand as={Link} to="/">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/">Inicio</Nav.Link>
+            <Nav.Link as={Link} to="/Nosotros">Nosotros</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
         <CartWidget />
-      </Navbar>
-
-  )
+      </Container>
+    </Navbar>
+  );
 }
 
 export default Menu;
