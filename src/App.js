@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Fragment } from 'react';
 
+import ItemDetailContainer from './components/ItemDetailContainer';
+
 function App() {
   return (
     <Fragment>
@@ -16,11 +18,13 @@ function App() {
         <Menu />
 
         <Routes>
+
           <Route path="/" element={<Main />} />
           <Route path="/Nosotros" element={<Nosotros />} />
+          
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
         </Routes>
 
-    
       </BrowserRouter>
       <Footer />
     </Fragment>

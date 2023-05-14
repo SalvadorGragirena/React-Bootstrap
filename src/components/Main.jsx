@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import ItemListContainer from './ItemListContainer';
 import { Container, Row, Col, Image, Button, Card, } from "react-bootstrap";
 
+
+
 const Main = () => {
     return (
         <Container>
@@ -35,7 +37,6 @@ const Main = () => {
             <Row>
                 <ItemListContainer greeting={"Listado de todos los productos"} dimetop={false} />
             </Row>
-
 
         </Container>
     )
