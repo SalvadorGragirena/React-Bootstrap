@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ItemCount from './ItemCount';
+import { CartContext } from '../context/CartContext';
+
 const ItemDetail = (props) => {
-  console.log(props);
+
   const { name, description, price, stock, img, id } = props;
+
   const onAdd = (cantidad) => {
     console.log(`Compraste ${cantidad} items`);
   };
+
+  const { cartArray } = useContext(CartContext);
+    console.log(cartArray);
+
   return (
     <div
       style={{
