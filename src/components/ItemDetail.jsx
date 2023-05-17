@@ -6,12 +6,14 @@ const ItemDetail = (props) => {
 
   const { name, description, price, stock, img, id } = props;
 
-  const onAdd = (cantidad) => {
-    console.log(`Compraste ${cantidad} items`);
-  };
-
   const { cartArray } = useContext(CartContext);
-    console.log(cartArray);
+   
+
+  const { addToCart } = useContext(CartContext);
+
+  const onAdd = (cantidad) => {
+    addToCart(props.name, cantidad);
+  }
 
   return (
     <div
