@@ -2,17 +2,23 @@ import React, { createContext, useState } from 'react';
 
 export const CartContext = createContext()
 
-const CartProvider = ( {children} ) => {
+const CartProvider = ({ children }) => {
 
-    const[cartArray, setCartArray] = useState([]);
+    const [cartArray, setCartArray] = useState([]);
 
     const addToCart = (product, count) => {
-        console.log(`Agregaste ${product.name}, cantidad ${count}.`);
-        const newObj = {
-            item: product,
-            count
+        if (isInCart(product.id)) {
+            console.log("Ya esta el producto en carrito");
         }
-        setCartArray([...cartArray, newObj])
+        else {
+            console.log(`Agregaste ${product.name}, cantidad ${count}.`);
+            const newObj = {
+                item: product,
+                count
+            }
+            setCartArray([...cartArray, newObj])
+            productCount();
+        }
     }
 
     const deleteItem = (id) => {
@@ -25,8 +31,20 @@ const CartProvider = ( {children} ) => {
     }
 
     const isInCart = (id) => {
-        return cartArray.some(element => element.id === id)
+        return cartArray.some(element => element.item.id === id)
     }
+/* 
+    Usar Use Effect para hacer logica al renderizar componente
+
+    const productCount = () => {
+        if (cartArray.length > 1) {
+            const value = cartArray.reduce((prev, current) => prev.count + current.count);
+            setTotalCount(value);
+        } else{
+            setTotalCount(cartArray[0].count);
+        }
+    }
+*/
 
     const value = {
         cartArray,
@@ -36,11 +54,11 @@ const CartProvider = ( {children} ) => {
         isInCart
     }
 
-  return (
-    <CartContext.Provider value={value}>
-      {children}
-    </CartContext.Provider>
-  )
+    return (
+        <CartContext.Provider value={value}>
+            {children}
+        </CartContext.Provider>
+    )
 }
 
 export default CartProvider

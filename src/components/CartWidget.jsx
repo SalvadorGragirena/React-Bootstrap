@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
+
 
 const CartWidget = () => {
   const [TotalItemCarrito, setTotalItemCarrito] = useState(6);
+  const { cartArray } = useContext(CartContext);
 
   return (
     <div>
