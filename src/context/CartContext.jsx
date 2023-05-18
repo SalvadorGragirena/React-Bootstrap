@@ -7,7 +7,7 @@ const CartProvider = ( {children} ) => {
     const[cartArray, setCartArray] = useState([]);
 
     const addToCart = (product, count) => {
-        console.log(`Agregaste ${product}, cantidad ${count}.`);
+        console.log(`Agregaste ${product.name}, cantidad ${count}.`);
         const newObj = {
             item: product,
             count
@@ -16,7 +16,7 @@ const CartProvider = ( {children} ) => {
     }
 
     const deleteItem = (id) => {
-        const updatedCart = cartArray.filter(element => element.id !== id);
+        const updatedCart = cartArray.filter(element => element.item.id !== id);
         setCartArray(updatedCart);
     }
 
