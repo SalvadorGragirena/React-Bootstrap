@@ -5,8 +5,8 @@ import { CartContext } from "../context/CartContext";
 
 
 const CartWidget = () => {
-  const [TotalItemCarrito, setTotalItemCarrito] = useState(6);
-  const { cartArray } = useContext(CartContext);
+
+  const { getQuantity } = useContext(CartContext);
 
   return (
     <div>
@@ -14,7 +14,7 @@ const CartWidget = () => {
          <FaShoppingCart size={'2rem'} color={'purple'} />
       </Link>
 
-      <span style={{ marginLeft: '10px' }}>5</span>
+      <span style={{ marginLeft: '10px' }}>{getQuantity()}</span>
       
     </div>
   );
