@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const CartContainer = () => {
 
-    const { cartArray, deleteItem } = useContext(CartContext);
+    const { cartArray } = useContext(CartContext);
 
     return (
         <div>
@@ -16,7 +16,7 @@ const CartContainer = () => {
                     <Link to="/"> Ir a inicio</Link>
                 </div>
             }
-            {cartArray.length > 0 && cartArray.map(prod => <CartItem key={prod.item.id} product={prod} deleteItem={deleteItem} />)}
+            {cartArray.length > 0 && cartArray.map(prod => <CartItem key={prod.item.id} product={prod} />)}
         </div>
     )
 }

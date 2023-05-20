@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { CartContext } from "../context/CartContext";
 
 
-const CartItem = ({ product, deleteItem }) => {
+const CartItem = ({ product }) => {
+    const { restarItem, sumarItem, deleteItem } = useContext(CartContext);
 
     return (
         <Card body>
@@ -12,7 +14,7 @@ const CartItem = ({ product, deleteItem }) => {
                         {product.item.name}
                     </Col>
                     <Col>
-                      Cantidad: {product.count}
+                    Cantidad: <Button varian='danger' onClick={() => restarItem(product.item.id)}> + </Button> {product.count} <Button varian='danger' onClick={() => sumarItem(product.item.id)}> + </Button>
                     </Col>
                     <Col>
                        ${product.item.price}

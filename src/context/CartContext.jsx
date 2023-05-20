@@ -1,11 +1,10 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 export const CartContext = createContext()
 
 const CartProvider = ({ children }) => {
 
     const [cartArray, setCartArray] = useState([]);
-    const [TotalCount, setTotalCount] = useState(0);
 
     const addToCart = (product, count) => {
         if (isInCart(product.id)) {
@@ -34,7 +33,19 @@ const CartProvider = ({ children }) => {
         return cartArray.some(element => element.item.id === id)
     }
 
-
+    const restarItem = (id) => {
+        setCartArray(prevState =>
+            cartArray.map(obj => ((obj.item.id === id && (obj.count > 0)) ? { ...obj, count: obj.count - 1 } : obj))
+        );
+      };
+     
+    
+      const sumarItem = (id) => {
+        setCartArray(prevState =>
+            cartArray.map(obj => ((obj.item.id === id && (obj.count < obj.item.stock)) ? { ...obj, count: obj.count + 1 } : obj))
+        );
+      };
+     
 
    const getQuantity = () => {
     if (cartArray.length){
@@ -52,7 +63,9 @@ const CartProvider = ({ children }) => {
         addToCart,
         deleteItem,
         clearCart,
-        isInCart
+        isInCart,
+        sumarItem,
+        restarItem
     }
 
     return (
