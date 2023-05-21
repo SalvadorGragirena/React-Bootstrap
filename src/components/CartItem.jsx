@@ -14,7 +14,7 @@ const CartItem = ({ product }) => {
                         {product.item.name}
                     </Col>
                     <Col>
-                    Cantidad: <Button varian='danger' onClick={() => restarItem(product.item.id)}> + </Button> {product.count} <Button varian='danger' onClick={() => sumarItem(product.item.id)}> + </Button>
+                    Cantidad: <Button varian='danger' onClick={() => restarItem(product.item.id)}> - </Button> {product.count} <Button varian='danger' onClick={() => sumarItem(product.item.id)}> + </Button>
                     </Col>
                     <Col>
                        ${product.item.price}
