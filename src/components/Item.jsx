@@ -25,16 +25,15 @@ const Item = ({ producto }) => {
           <p className="card-text">{oferta ? 'En oferta 50%' : 'No en oferta'}</p>
         </section>
         <p className="card-text">stock: {stock}</p>
+        
+      </div>
+      {show && (
+        <>
         {hashtags?.map((frase, index) => (
           <p className="card-text" key={index}>
             {frase}
           </p>
         ))}
-        {/* safe navigation operator, en JS Optional chaining o encadenamiento opcional ,
-         les dejo el link de la docu: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Optional_chaining */}
-      </div>
-      {show && (
-        <>
           <p className="card-text">{description}</p>
           <Link to={`/item/${id}`}>Ir al detalle</Link>
         </>

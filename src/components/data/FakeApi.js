@@ -79,7 +79,7 @@ const productos = [
     },
     {
       id: '07',
-      name: 'random8',
+      name: 'random7',
       category: 'linea blanca',
       oferta: true,
       description:
@@ -88,7 +88,7 @@ const productos = [
       img: 'https://picsum.photos/326/200',
       hashtags: ['#compraya', '#ultimoprod', '#random'],
       stock: 4,
-      top: true,
+      top: false,
     },
     {
       id: '08',
@@ -102,6 +102,19 @@ const productos = [
       hashtags: ['#compraya', '#ultimoprod', '#random'],
       stock: 4,
       top: true,
+    },
+    {
+      id: '09',
+      name: 'random9',
+      category: 'linea blanca',
+      oferta: true,
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra nibh cras pulvinar mattis nunc. Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Bibendum at varius vel pharetra vel turpis nunc. Pellentesque dignissim enim sit amet venenatis',
+      price: 50,
+      img: 'https://picsum.photos/327/200',
+      hashtags: ['#compraya', '#ultimoprod', '#random'],
+      stock: 4,
+      top: false,
     },
   ];
   

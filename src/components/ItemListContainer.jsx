@@ -4,7 +4,7 @@ import { getProducts } from './data/FakeApi'
 import Loader from './Loader/Loader';
 import { useParams } from 'react-router-dom';
 
-const ItemListContainer = ({ greeting, dimetop }) => {
+const ItemListContainer = ({ greeting, category }) => {
   const [listaProductos, setListaProductos] = useState([]);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
@@ -14,12 +14,10 @@ const ItemListContainer = ({ greeting, dimetop }) => {
     setLoading(true);
     getProducts()
       .then((res) => {
-        if (id) {
-          setListaProductos(res.filter((item) => item.category === id));
-        } else if (dimetop === true) {
+        if (category === "NoCategoria") {
           setListaProductos(res.filter((item) => item.top === true));
         } else {
-          setListaProductos(res);
+          setListaProductos(res.filter((item) => item.category === category));
         }
       })
       .catch((error) => console.log(error))
@@ -32,9 +30,6 @@ const ItemListContainer = ({ greeting, dimetop }) => {
     <div>
       <h2>
         {greeting}{' '}
-        <span style={{ textTransform: 'capitalize', color: '#c737d7' }}>
-          {id && id}
-        </span>
       </h2>
       {loading ? <Loader /> : <ItemList listaProductos={listaProductos} />}
     </div>

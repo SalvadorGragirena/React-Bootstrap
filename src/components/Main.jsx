@@ -31,11 +31,16 @@ const Main = () => {
                 </Card>
             </Row>
             <Row>
-                <ItemListContainer greeting={"Listado de productos top en ventas"} dimetop={true} />
+                <ItemListContainer greeting={"Listado de productos top en ventas"} category={"NoCategoria"}/>
             </Row>
-
             <Row>
-                <ItemListContainer greeting={"Listado de todos los productos"} dimetop={false} />
+                <ItemListContainer greeting={"Listado de productos de muebles"}category={"muebles"}/>
+            </Row>
+            <Row>
+                <ItemListContainer greeting={"Listado de productos de ropa"} category={"ropa"}/>
+            </Row>
+            <Row>
+                <ItemListContainer greeting={"Listado de productos de linea blanca"} category={"linea blanca"}/>
             </Row>
 
         </Container>
