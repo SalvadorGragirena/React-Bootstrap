@@ -13,7 +13,7 @@ const Productos = () => {
             <p>jnenene</p>
         </Fragment>
         
-    )
+    );
 }
 
 export default Productos;

@@ -31,16 +31,16 @@ const Main = () => {
                 </Card>
             </Row>
             <Row>
-                <ItemListContainer greeting={"Listado de productos top en ventas"} category={"NoCategoria"}/>
+                <ItemListContainer greeting={"Listado de productos Top en Ventas"} category={"NoCategoria"}/>
             </Row>
             <Row>
-                <ItemListContainer greeting={"Listado de productos de muebles"}category={"muebles"}/>
+                <ItemListContainer greeting={"Listado de productos de Muebles"}category={"muebles"}/>
             </Row>
             <Row>
-                <ItemListContainer greeting={"Listado de productos de ropa"} category={"ropa"}/>
+                <ItemListContainer greeting={"Listado de productos de Ropa"} category={"ropa"}/>
             </Row>
             <Row>
-                <ItemListContainer greeting={"Listado de productos de linea blanca"} category={"linea blanca"}/>
+                <ItemListContainer greeting={"Listado de productos de Linea blanca"} category={"linea blanca"}/>
             </Row>
 
         </Container>

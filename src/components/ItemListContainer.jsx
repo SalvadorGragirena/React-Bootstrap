@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import { getProducts } from './data/FakeApi'
 import Loader from './Loader/Loader';
-import { useParams } from 'react-router-dom';
+
 
 const ItemListContainer = ({ greeting, category }) => {
   const [listaProductos, setListaProductos] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { id } = useParams();
 
 
   useEffect(() => {
@@ -28,7 +27,7 @@ const ItemListContainer = ({ greeting, category }) => {
 
   return (
     <div>
-      <h2>
+      <h2 style={{ marginBottom: '20px', marginTop: '20px', textAlign: 'center'}}>
         {greeting}{' '}
       </h2>
       {loading ? <Loader /> : <ItemList listaProductos={listaProductos} />}
