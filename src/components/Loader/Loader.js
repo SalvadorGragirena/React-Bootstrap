@@ -1,5 +1,5 @@
 import React from 'react';
-import { CircleLoader } from 'react-spinners';
+import { SpinnerCircular } from 'spinners-react';
 
 const Loader = () => {
   return (
@@ -12,7 +12,7 @@ const Loader = () => {
         alignItems: 'center',
       }}
     >
-      <CircleLoader color="#c737d7" size={90} />
+      <SpinnerCircular color="#c737d7" size={90} />
     </div>
   );
 };
